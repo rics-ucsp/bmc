@@ -29,10 +29,9 @@ bmc::bmc(QWidget *parent)
 	// Add renderer
 
 	vtkSmartPointer<vtkRenderer> renderer =	vtkSmartPointer<vtkRenderer>::New();
+	//renderer = vtkSmartPointer<vtkRenderer>::New();
 	renderer->SetBackground(0, 0, 0);
 	this->ui->vtkRenderer->GetRenderWindow()->AddRenderer(renderer);
-
-
 
 	this->ui->verticalSlider->hide();
 
@@ -44,29 +43,19 @@ bmc::bmc(QWidget *parent)
 void bmc::openDCMFolder(){
 	//QString folderNameDCM = QFileDialog::getExistingDirectory(this, tr("Open DCM Folder"), QDir::currentPath(), QFileDialog::ShowDirsOnly);
 	QString folderNameDCM = QFileDialog::getExistingDirectory(this, tr("Open DCM Folder"), QDir::currentPath() );
-
-
-	/*std::string stdstrFolderNameDCM = folderNameDCM.toUtf8().constData();
-	drawDCMSeries(stdstrFolderNameDCM);*/
-
-
 	std::string fileStd = folderNameDCM.toStdString();
 	drawDCMSeries(fileStd);
 
 }
 
-void bmc::drawDCMSeries(std::string folderDCM)
-{
-
+void bmc::drawDCMSeries(std::string folderDCM){
 	/*if (!readerDCMSeries->CanReadFile(folderDCM.c_str())) {
 		QMessageBox Msgbox;
 		Msgbox.setText("what");
 		Msgbox.exec();
 	}*/
-
 	readerDCMSeries->SetDirectoryName(folderDCM.c_str());
 	readerDCMSeries->Update();
-
 	imageViewer->SetInputConnection(readerDCMSeries->GetOutputPort());
 	mMinSliderX = imageViewer->GetSliceMin();
 	mMaxSliderX = imageViewer->GetSliceMax();
@@ -97,7 +86,6 @@ void bmc::updateImageSlice(){
 		cout << "Slicer: Min = " << _MinSlice << ", Max = " << _MaxSlice << ", Current pos = " << _Slice << std::endl;
 	}
 }
-
 
 void bmc::updateSlice(){
 	int _Slice;
@@ -161,57 +149,52 @@ void bmc::openDataSet(){
 	QTableWidgetItem *height = new QTableWidgetItem(hChar);
 	statsTable->setItem(0, 4, height);
 
-	//
+	/*QMessageBox Msgbox;
+	Msgbox.setText(height->text());
+	Msgbox.exec();*/
+
 	// Volume rendering section below
-	//
 
 	// Create volume
-	vtkSmartPointer<vtkImageData> volumeData =
-		vtkSmartPointer<vtkImageData>::New();
+	vtkSmartPointer<vtkImageData> volumeData = vtkSmartPointer<vtkImageData>::New();
 
 	// Copy image data
 	volumeData->DeepCopy(reader->GetOutput());
 
 	// Ray cast data
-	vtkSmartPointer<vtkGPUVolumeRayCastMapper> volumeMapper =
-		vtkSmartPointer<vtkGPUVolumeRayCastMapper>::New();
+	vtkSmartPointer<vtkGPUVolumeRayCastMapper> volumeMapper = vtkSmartPointer<vtkGPUVolumeRayCastMapper>::New();
 	volumeMapper->SetInputData(volumeData);
 
-	vtkSmartPointer<vtkVolumeProperty> volumeProperty =
-		vtkSmartPointer<vtkVolumeProperty>::New();
+	vtkSmartPointer<vtkVolumeProperty> volumeProperty =	vtkSmartPointer<vtkVolumeProperty>::New();
 
-	vtkSmartPointer<vtkPiecewiseFunction> compositeOpacity =
-		vtkSmartPointer<vtkPiecewiseFunction>::New();
-	compositeOpacity->AddPoint(0.0, 0.1);
+	vtkSmartPointer<vtkPiecewiseFunction> compositeOpacity = vtkSmartPointer<vtkPiecewiseFunction>::New();
+	/*compositeOpacity->AddPoint(0.0, 0.1);
 	compositeOpacity->AddPoint(80.0, 0.2);
-	compositeOpacity->AddPoint(255.0, 0.1);
+	compositeOpacity->AddPoint(255.0, 0.1);*/
+
+	compositeOpacity->AddPoint(0.0, 0.0);
+	compositeOpacity->AddPoint(255, 1.0);
 	volumeProperty->SetScalarOpacity(compositeOpacity);
 
-	vtkSmartPointer<vtkColorTransferFunction> color =
-		vtkSmartPointer<vtkColorTransferFunction>::New();
+	vtkSmartPointer<vtkColorTransferFunction> color = vtkSmartPointer<vtkColorTransferFunction>::New();
 	color->AddRGBPoint(0.0, 0.0, 0.0, 1.0);
 	color->AddRGBPoint(40.0, 1.0, 0.0, 0.0);
-	color->AddRGBPoint(255.0, 1.0, 1.0, 1.0);
+	color->AddRGBPoint(250, 1.0, 1.0, 1.0);
 	volumeProperty->SetColor(color);
 
-	vtkSmartPointer<vtkVolume> volume =
-		vtkSmartPointer<vtkVolume>::New();
+	vtkSmartPointer<vtkVolume> volume =	vtkSmartPointer<vtkVolume>::New();
 	volume->SetMapper(volumeMapper);
 	volume->SetProperty(volumeProperty);
 
 	// VTK Renderer
-	vtkSmartPointer<vtkRenderer> renderer =
-		vtkSmartPointer<vtkRenderer>::New();
-	renderer->SetBackground(0.5f, 0.5f, 1.0f);
 
-	//vtkSmartPointer<vtkRenderWindowInteractor> iren =
-	// vtkSmartPointer<vtkRenderWindowInteractor>::New();
+	vtkSmartPointer<vtkRenderer> renderer =  vtkSmartPointer<vtkRenderer>::New();
+	//renderer->SetBackground(0.5f, 0.5f, 1.0f);
+	renderer->SetBackground(0.0f, 0.0f, 0.0f);
 	vtkRenderWindow *renWin = this->ui->vtkRenderer->GetRenderWindow();
 
 	renWin->AddRenderer(renderer);
-	renWin->SetSize(1280, 1024);
-
-	//iren->SetRenderWindow( renWin );
+	//renWin->SetSize(1280, 1024);
 
 	// Add coordinate system axes, so we have a reference for position and orientation
 	vtkSmartPointer<vtkAxesActor> axes = vtkSmartPointer<vtkAxesActor>::New();
@@ -225,7 +208,6 @@ void bmc::openDataSet(){
 	//iren->Start();
 }
 
-void bmc::slotExit()
-{
+void bmc::slotExit(){
 	qApp->exit();
 }

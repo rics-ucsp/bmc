@@ -1,6 +1,6 @@
 //#define vtkRenderingCore_AUTOINIT 3(vtkRenderingOpenGL2, vtkInteractionStyle)
 
-#define vtkRenderingCore_AUTOINIT 3(vtkRenderingOpenGL2, vtkInteractionStyle,vtkRenderingVolumeOpenGL2)
+#define vtkRenderingCore_AUTOINIT 4(vtkRenderingOpenGL2, vtkInteractionStyle,vtkRenderingVolumeOpenGL2,vtkRenderingFreeType)
 //#include <itkRandomImageSource.h>
 #include <vtkSmartPointer.h>
 #include <vtkObjectFactory.h>

@@ -24,7 +24,7 @@ bmc::bmc(QWidget *parent)
 	imageCast->SetOutputScalarTypeToUnsignedChar();
 	imageCast->Update();*/
 
-
+	
 
 	//interactorStyle = vtkSmartPointer<vtkInteractorStyleImage>::New();
 

@@ -1,12 +1,19 @@
 #include "bmc.h"
 #include <QtWidgets/QMessageBox >
 
+#include "IObmd.h"
+
 
 using namespace std;
 
 bmc::bmc(QWidget *parent)
 	: QMainWindow(parent)
 {
+
+	/*QMessageBox Msgbox;
+	Msgbox.setText("ola k ase");
+	Msgbox.exec();*/
+
 	//this->ui = new Ui_bmcClass;
 	ui->setupUi(this);
 	readerDCMSeries = vtkSmartPointer<vtkDICOMImageReader>::New();
@@ -26,21 +33,26 @@ bmc::bmc(QWidget *parent)
 
 
 	//interactorStyle = vtkSmartPointer<vtkInteractorStyleImage>::New();
+	//Add renderer
 
-	// Add renderer
+	
+	read_vtk_file( this->ui->vtkRenderer );
 
-	vtkSmartPointer<vtkRenderer> renderer =	vtkSmartPointer<vtkRenderer>::New();
+
 	//renderer = vtkSmartPointer<vtkRenderer>::New();
-	renderer->SetBackground(0, 0, 0);
-	this->ui->vtkRenderer->GetRenderWindow()->AddRenderer(renderer);
 
-	this->ui->verticalSlider->hide();
 
-	// Connect signals and slots
-	//connect(this->ui->pushButton, SIGNAL(clicked()), this, SLOT(pushButtonClicked()));
-	connect(this->ui->actionOpen_Data_Set, SIGNAL(triggered()), this, SLOT(openDataSet()));
-	connect(this->ui->verticalSlider, SIGNAL(valueChanged(int)), this, SLOT(updateSlice()));
+	//vtkSmartPointer<vtkRenderer> renderer = vtkSmartPointer<vtkRenderer>::New();
+	//renderer->SetBackground(0, 0, 0);
+	//this->ui->vtkRenderer->GetRenderWindow()->AddRenderer(renderer);
+	//this->ui->verticalSlider->hide();
+
+	////connect(this->ui->pushButton, SIGNAL(clicked()), this, SLOT(pushButtonClicked()));
+
+	//connect(this->ui->actionOpen_Data_Set, SIGNAL(triggered()), this, SLOT(openDataSet()));
+	//connect(this->ui->verticalSlider, SIGNAL(valueChanged(int)), this, SLOT(updateSlice()));
 }
+
 void bmc::openDCMFolder(){
 	//QString folderNameDCM = QFileDialog::getExistingDirectory(this, tr("Open DCM Folder"), QDir::currentPath(), QFileDialog::ShowDirsOnly);
 	QString folderNameDCM = QFileDialog::getExistingDirectory(this, tr("Open DCM Folder"), QDir::currentPath() );

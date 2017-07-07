@@ -38,7 +38,7 @@ void create_sphere(QVTKWidget *widget){
 void read_vtk_file(QVTKWidget *widget) {
 	std::string inputFilename = "D:/project/bmc/bmc/samples/crane.vtk";
 
-	vtkSmartPointer<vtkUnstructuredGridReader> reader =		vtkSmartPointer<vtkUnstructuredGridReader>::New();
+	vtkSmartPointer<vtkUnstructuredGridReader> reader =	vtkSmartPointer<vtkUnstructuredGridReader>::New();
 	reader->SetFileName(inputFilename.c_str());
 	reader->Update();
 

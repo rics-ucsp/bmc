@@ -15,6 +15,7 @@
 #include <QStringList>
 #include  <QTableWidgetItem>
 
+
 //int mMaxSliderX;
 
 
@@ -51,4 +52,5 @@ private:
 
 	vtkSmartPointer<vtkImageViewer2> imageViewer;
 	vtkSmartPointer<vtkInteractorStyleImage> interactorStyle;
+	//vtkSmartPointer<vtkUnstructuredGridReader> reader2;
 };

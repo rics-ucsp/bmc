@@ -15,6 +15,14 @@
 #include <QStringList>
 #include  <QTableWidgetItem>
 
+
+#include <QWidget>
+#include <QListWidget>
+#include <QListWidgetItem>
+#include "thewidgetitem.h"
+#include <QVector>
+#include <QDebug>
+
 //int mMaxSliderX;
 
 
@@ -27,8 +35,9 @@ class bmc : public QMainWindow
 	Q_OBJECT
 
 public:
-	bmc(QWidget *parent = Q_NULLPTR);
-
+	bmc(QMainWindow *parent = Q_NULLPTR);
+	//~bmc();
+	
 
 private slots:
 	void openDCMFolder();
@@ -51,4 +60,5 @@ private:
 
 	vtkSmartPointer<vtkImageViewer2> imageViewer;
 	vtkSmartPointer<vtkInteractorStyleImage> interactorStyle;
+
 };

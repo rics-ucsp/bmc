@@ -32,3 +32,6 @@
 #include <vtkColorTransferFunction.h>
 #include <vtkPiecewiseFunction.h>
 #include <vtkAxesActor.h>
+
+//for vtk reader
+#include <vtkUnstructuredGridReader.h>

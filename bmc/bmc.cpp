@@ -1,12 +1,9 @@
 #include "bmc.h"
 #include <QtWidgets/QMessageBox >
-
 #include "IObmd.h"
-
-
 using namespace std;
 
-bmc::bmc(QWidget *parent)
+bmc::bmc(QMainWindow *parent)
 	: QMainWindow(parent)
 {
 
@@ -18,6 +15,8 @@ bmc::bmc(QWidget *parent)
 	ui->setupUi(this);
 	readerDCMSeries = vtkSmartPointer<vtkDICOMImageReader>::New();
 	imageViewer = vtkSmartPointer<vtkImageViewer2>::New();
+
+	
 
 	//volume project
 	//imageViewer = vtkSmartPointer<vtkImageViewer2>::New();
@@ -36,7 +35,7 @@ bmc::bmc(QWidget *parent)
 	//Add renderer
 
 	
-	read_vtk_file( this->ui->vtkRenderer );
+	//read_vtk_file( this->ui->vtkRenderer );
 
 
 	//renderer = vtkSmartPointer<vtkRenderer>::New();
@@ -51,6 +50,30 @@ bmc::bmc(QWidget *parent)
 
 	//connect(this->ui->actionOpen_Data_Set, SIGNAL(triggered()), this, SLOT(openDataSet()));
 	//connect(this->ui->verticalSlider, SIGNAL(valueChanged(int)), this, SLOT(updateSlice()));
+
+	//********** listwidget
+	QVector<QString> archivosVtk;
+	archivosVtk.push_back("1file.vtk");
+	archivosVtk.push_back("crane.vtk");
+	archivosVtk.push_back("tauro.vtk");
+
+	vtkSmartPointer<vtkRenderer> renderer = vtkSmartPointer<vtkRenderer>::New();
+
+	for (int i = 0; i < 3; ++i) {
+
+		QListWidgetItem *listWidgetItem = new QListWidgetItem(ui->listWidget);
+		ui->listWidget->addItem(listWidgetItem);
+		TheWidgetItem *theWidgetItem = new TheWidgetItem(archivosVtk[i],this->ui->vtkRenderer, renderer,i+1);
+		//listWidgetItem->setSizeHint(theWidgetItem->sizeHint());
+		listWidgetItem->setSizeHint(QSize(0, 23));
+		ui->listWidget->setItemWidget(listWidgetItem, theWidgetItem);
+		ui->listWidget->addItem(listWidgetItem);
+		
+		//ui->listWidget->addItem(file);
+	}
+
+
+
 }
 
 void bmc::openDCMFolder(){

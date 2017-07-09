@@ -1,4 +1,6 @@
 <RCC>
-    <qresource prefix="bmc">
+    <qresource prefix="/bmc">
+        <file>eye_off.png</file>
+        <file>eye_on.png</file>
     </qresource>
 </RCC>

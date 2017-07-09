@@ -43,7 +43,7 @@ public:
         pressThisBtn = new QPushButton(formLayoutWidget);
         pressThisBtn->setObjectName(QStringLiteral("pressThisBtn"));
         QIcon icon;
-        icon.addFile(QStringLiteral("../../../Users/Fil/Desktop/eye_on.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon.addFile(QStringLiteral("../eye_on.png"), QSize(), QIcon::Normal, QIcon::Off);
         pressThisBtn->setIcon(icon);
 
         formLayout->setWidget(0, QFormLayout::LabelRole, pressThisBtn);

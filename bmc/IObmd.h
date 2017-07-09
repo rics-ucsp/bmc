@@ -50,12 +50,6 @@ void read_vtk_file(QVTKWidget *widget) {
 	reader2->SetFileName(inputFilename2.c_str());
 	reader2->Update();
 
-<<<<<<< HEAD
-=======
-	vtkSmartPointer<vtkUnstructuredGridReader> reader =	vtkSmartPointer<vtkUnstructuredGridReader>::New();
-	reader->SetFileName(inputFilename.c_str());
-	reader->Update();
->>>>>>> 16ab450268e74c66a8a3de62ebb66f859de2f158
 
 	//Create a mapper and actor
 	vtkSmartPointer<vtkDataSetMapper> mapper =	vtkSmartPointer<vtkDataSetMapper>::New();

@@ -60,7 +60,7 @@ TheWidgetItem::~TheWidgetItem()
 void TheWidgetItem::on_pressThisBtn_clicked() {
 
 	if (visible == true) {
-		ui->pressThisBtn->setIcon(QIcon("C:/Users/Fil/Desktop/eye_off.png"));
+		ui->pressThisBtn->setIcon(QIcon("eye_off.png"));
 		visible = false;
 		//renderer->SetBackground(0.2, 0.2, 0.2);
 		
@@ -73,7 +73,7 @@ void TheWidgetItem::on_pressThisBtn_clicked() {
 		widgetVTK->show();
 	}
 	else {
-		ui->pressThisBtn->setIcon(QIcon("C:/Users/Fil/Desktop/eye_on.png"));
+		ui->pressThisBtn->setIcon(QIcon("eye_on.png"));
 		visible = true;
 		//renderer->SetBackground(0, 0, 0);
 		

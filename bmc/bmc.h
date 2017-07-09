@@ -16,7 +16,6 @@
 #include  <QTableWidgetItem>
 
 
-<<<<<<< HEAD
 #include <QWidget>
 #include <QListWidget>
 #include <QListWidgetItem>
@@ -24,8 +23,7 @@
 #include <QVector>
 #include <QDebug>
 
-=======
->>>>>>> 16ab450268e74c66a8a3de62ebb66f859de2f158
+
 //int mMaxSliderX;
 
 
@@ -63,9 +61,6 @@ private:
 
 	vtkSmartPointer<vtkImageViewer2> imageViewer;
 	vtkSmartPointer<vtkInteractorStyleImage> interactorStyle;
-<<<<<<< HEAD
 
-=======
-	//vtkSmartPointer<vtkUnstructuredGridReader> reader2;
->>>>>>> 16ab450268e74c66a8a3de62ebb66f859de2f158
+
 };

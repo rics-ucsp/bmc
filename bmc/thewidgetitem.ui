@@ -30,7 +30,7 @@
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../../../Users/Fil/Desktop/eye_on.png</normaloff>../../../Users/Fil/Desktop/eye_on.png</iconset>
+        <normaloff>eye_on.png</normaloff>eye_on.png</iconset>
       </property>
      </widget>
     </item>

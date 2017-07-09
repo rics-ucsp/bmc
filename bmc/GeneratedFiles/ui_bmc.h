@@ -14,8 +14,8 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QComboBox>
-#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
@@ -34,8 +34,6 @@ class Ui_bmcClass
 public:
     QAction *actionOpen_Data_Set;
     QWidget *centralWidget;
-    QGridLayout *gridLayout_2;
-    QGridLayout *gridLayout;
     QComboBox *comboBox;
     QPushButton *pushButton;
     QVTKWidget *vtkRenderer;
@@ -43,6 +41,7 @@ public:
     QPushButton *btnOpenDCMFolder;
     QSlider *hSliderDCM;
     QSlider *verticalSlider;
+    QListWidget *listWidget;
     QMenuBar *menuBar;
     QMenu *menuArchivo;
     QToolBar *mainToolBar;
@@ -52,58 +51,37 @@ public:
     {
         if (bmcClass->objectName().isEmpty())
             bmcClass->setObjectName(QStringLiteral("bmcClass"));
-        bmcClass->resize(1060, 567);
+        bmcClass->resize(1060, 579);
         actionOpen_Data_Set = new QAction(bmcClass);
         actionOpen_Data_Set->setObjectName(QStringLiteral("actionOpen_Data_Set"));
         centralWidget = new QWidget(bmcClass);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        gridLayout_2 = new QGridLayout(centralWidget);
-        gridLayout_2->setSpacing(6);
-        gridLayout_2->setContentsMargins(11, 11, 11, 11);
-        gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
-        gridLayout = new QGridLayout();
-        gridLayout->setSpacing(6);
-        gridLayout->setObjectName(QStringLiteral("gridLayout"));
         comboBox = new QComboBox(centralWidget);
         comboBox->setObjectName(QStringLiteral("comboBox"));
-
-        gridLayout->addWidget(comboBox, 0, 0, 1, 1);
-
+        comboBox->setGeometry(QRect(10, 10, 69, 20));
         pushButton = new QPushButton(centralWidget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-
-        gridLayout->addWidget(pushButton, 1, 0, 1, 1);
-
+        pushButton->setGeometry(QRect(10, 36, 101, 23));
         vtkRenderer = new QVTKWidget(centralWidget);
         vtkRenderer->setObjectName(QStringLiteral("vtkRenderer"));
-
-        gridLayout->addWidget(vtkRenderer, 0, 2, 3, 2);
-
+        vtkRenderer->setGeometry(QRect(300, 20, 751, 421));
         tableWidget = new QTableWidget(centralWidget);
         tableWidget->setObjectName(QStringLiteral("tableWidget"));
-
-        gridLayout->addWidget(tableWidget, 2, 0, 1, 1);
-
+        tableWidget->setGeometry(QRect(10, 65, 256, 192));
         btnOpenDCMFolder = new QPushButton(centralWidget);
         btnOpenDCMFolder->setObjectName(QStringLiteral("btnOpenDCMFolder"));
-
-        gridLayout->addWidget(btnOpenDCMFolder, 3, 2, 1, 1);
-
+        btnOpenDCMFolder->setGeometry(QRect(290, 450, 75, 23));
         hSliderDCM = new QSlider(centralWidget);
         hSliderDCM->setObjectName(QStringLiteral("hSliderDCM"));
+        hSliderDCM->setGeometry(QRect(380, 450, 84, 22));
         hSliderDCM->setOrientation(Qt::Horizontal);
-
-        gridLayout->addWidget(hSliderDCM, 3, 3, 1, 1);
-
         verticalSlider = new QSlider(centralWidget);
         verticalSlider->setObjectName(QStringLiteral("verticalSlider"));
+        verticalSlider->setGeometry(QRect(272, 10, 22, 84));
         verticalSlider->setOrientation(Qt::Vertical);
-
-        gridLayout->addWidget(verticalSlider, 0, 1, 3, 1);
-
-
-        gridLayout_2->addLayout(gridLayout, 0, 0, 1, 1);
-
+        listWidget = new QListWidget(centralWidget);
+        listWidget->setObjectName(QStringLiteral("listWidget"));
+        listWidget->setGeometry(QRect(10, 270, 256, 192));
         bmcClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(bmcClass);
         menuBar->setObjectName(QStringLiteral("menuBar"));

@@ -14,16 +14,20 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QComboBox>
+#include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QLayout>
 #include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSlider>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTableWidget>
+#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QToolBox>
 #include <QtWidgets/QWidget>
@@ -42,14 +46,31 @@ public:
     QTableWidget *tableWidget;
     QPushButton *btnOpenDCMFolder;
     QSlider *hSliderDCM;
-    QSlider *verticalSlider;
     QToolBox *toolBox;
     QWidget *page;
-    QPushButton *pushButton_2;
+    QPushButton *btn_import;
+    QLabel *label_5;
+    QLabel *label_6;
+    QPushButton *btn_open;
     QWidget *page_2;
     QListWidget *listWidget;
+    QGroupBox *groupBox;
+    QComboBox *comboBox_2;
+    QLabel *label;
+    QSlider *horizontalSlider;
+    QTextEdit *textEdit;
+    QTextEdit *textEdit_2;
+    QLabel *label_2;
+    QPlainTextEdit *plainTextEdit_3;
     QWidget *page_3;
+    QPushButton *pushButton_3;
+    QPushButton *pushButton_4;
     QWidget *page_4;
+    QLabel *label_3;
+    QLabel *label_4;
+    QPushButton *pushButton_5;
+    QPushButton *pushButton_6;
+    QSlider *verticalSlider;
     QMenuBar *menuBar;
     QMenu *menuArchivo;
     QToolBar *mainToolBar;
@@ -83,37 +104,95 @@ public:
         hSliderDCM->setObjectName(QStringLiteral("hSliderDCM"));
         hSliderDCM->setGeometry(QRect(300, 450, 84, 22));
         hSliderDCM->setOrientation(Qt::Horizontal);
-        verticalSlider = new QSlider(centralWidget);
-        verticalSlider->setObjectName(QStringLiteral("verticalSlider"));
-        verticalSlider->setGeometry(QRect(1010, 440, 22, 84));
-        verticalSlider->setOrientation(Qt::Vertical);
         toolBox = new QToolBox(centralWidget);
         toolBox->setObjectName(QStringLiteral("toolBox"));
         toolBox->setGeometry(QRect(10, 0, 261, 511));
         page = new QWidget();
         page->setObjectName(QStringLiteral("page"));
         page->setGeometry(QRect(0, 0, 261, 403));
-        pushButton_2 = new QPushButton(page);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(20, 0, 101, 23));
-        QIcon icon(QIcon::fromTheme(QStringLiteral("new")));
-        pushButton_2->setIcon(icon);
-        toolBox->addItem(page, QStringLiteral("1. Entrada de Imagen DICOM"));
+        btn_import = new QPushButton(page);
+        btn_import->setObjectName(QStringLiteral("btn_import"));
+        btn_import->setGeometry(QRect(150, 10, 101, 23));
+        QIcon icon;
+        QString iconThemeName = QStringLiteral("new");
+        if (QIcon::hasThemeIcon(iconThemeName)) {
+            icon = QIcon::fromTheme(iconThemeName);
+        } else {
+            icon.addFile(QStringLiteral("."), QSize(), QIcon::Normal, QIcon::Off);
+        }
+        btn_import->setIcon(icon);
+        label_5 = new QLabel(page);
+        label_5->setObjectName(QStringLiteral("label_5"));
+        label_5->setGeometry(QRect(20, 10, 131, 20));
+        label_6 = new QLabel(page);
+        label_6->setObjectName(QStringLiteral("label_6"));
+        label_6->setGeometry(QRect(20, 50, 131, 20));
+        btn_open = new QPushButton(page);
+        btn_open->setObjectName(QStringLiteral("btn_open"));
+        btn_open->setGeometry(QRect(150, 50, 101, 23));
+        toolBox->addItem(page, QStringLiteral("1. Cargar Imagen"));
         page_2 = new QWidget();
         page_2->setObjectName(QStringLiteral("page_2"));
-        page_2->setGeometry(QRect(0, 0, 261, 403));
+        page_2->setGeometry(QRect(0, 0, 98, 28));
         listWidget = new QListWidget(page_2);
         listWidget->setObjectName(QStringLiteral("listWidget"));
-        listWidget->setGeometry(QRect(0, 0, 256, 192));
-        toolBox->addItem(page_2, QStringLiteral("2. Visualizacion de Modelos 3D"));
+        listWidget->setGeometry(QRect(0, 0, 261, 192));
+        groupBox = new QGroupBox(page_2);
+        groupBox->setObjectName(QStringLiteral("groupBox"));
+        groupBox->setGeometry(QRect(0, 200, 261, 91));
+        comboBox_2 = new QComboBox(groupBox);
+        comboBox_2->setObjectName(QStringLiteral("comboBox_2"));
+        comboBox_2->setGeometry(QRect(110, 20, 131, 22));
+        label = new QLabel(groupBox);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(10, 20, 91, 20));
+        horizontalSlider = new QSlider(groupBox);
+        horizontalSlider->setObjectName(QStringLiteral("horizontalSlider"));
+        horizontalSlider->setGeometry(QRect(70, 50, 121, 22));
+        horizontalSlider->setOrientation(Qt::Horizontal);
+        textEdit = new QTextEdit(groupBox);
+        textEdit->setObjectName(QStringLiteral("textEdit"));
+        textEdit->setGeometry(QRect(10, 50, 51, 31));
+        textEdit_2 = new QTextEdit(groupBox);
+        textEdit_2->setObjectName(QStringLiteral("textEdit_2"));
+        textEdit_2->setGeometry(QRect(200, 50, 51, 31));
+        label_2 = new QLabel(page_2);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setGeometry(QRect(20, 300, 101, 16));
+        plainTextEdit_3 = new QPlainTextEdit(page_2);
+        plainTextEdit_3->setObjectName(QStringLiteral("plainTextEdit_3"));
+        plainTextEdit_3->setGeometry(QRect(120, 300, 51, 31));
+        toolBox->addItem(page_2, QString::fromUtf8("2. Construcci\303\263n de la Malla Volum\303\251trica"));
         page_3 = new QWidget();
         page_3->setObjectName(QStringLiteral("page_3"));
-        page_3->setGeometry(QRect(0, 0, 261, 403));
-        toolBox->addItem(page_3, QStringLiteral("3. Seleccion de Muestra de Analisis"));
+        page_3->setGeometry(QRect(0, 0, 98, 28));
+        pushButton_3 = new QPushButton(page_3);
+        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+        pushButton_3->setGeometry(QRect(30, 20, 201, 23));
+        pushButton_4 = new QPushButton(page_3);
+        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
+        pushButton_4->setGeometry(QRect(30, 50, 201, 23));
+        toolBox->addItem(page_3, QString::fromUtf8("3. Cuantificaci\303\263n Osea"));
         page_4 = new QWidget();
         page_4->setObjectName(QStringLiteral("page_4"));
-        page_4->setGeometry(QRect(0, 0, 261, 403));
-        toolBox->addItem(page_4, QStringLiteral("4. Guardar y Salir"));
+        page_4->setGeometry(QRect(0, 0, 98, 28));
+        label_3 = new QLabel(page_4);
+        label_3->setObjectName(QStringLiteral("label_3"));
+        label_3->setGeometry(QRect(20, 20, 91, 16));
+        label_4 = new QLabel(page_4);
+        label_4->setObjectName(QStringLiteral("label_4"));
+        label_4->setGeometry(QRect(20, 50, 91, 16));
+        pushButton_5 = new QPushButton(page_4);
+        pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
+        pushButton_5->setGeometry(QRect(130, 20, 75, 23));
+        pushButton_6 = new QPushButton(page_4);
+        pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
+        pushButton_6->setGeometry(QRect(130, 50, 75, 23));
+        toolBox->addItem(page_4, QStringLiteral("4. Exportar Datos"));
+        verticalSlider = new QSlider(centralWidget);
+        verticalSlider->setObjectName(QStringLiteral("verticalSlider"));
+        verticalSlider->setGeometry(QRect(680, 450, 22, 71));
+        verticalSlider->setOrientation(Qt::Vertical);
         bmcClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(bmcClass);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -145,11 +224,23 @@ public:
         actionOpen_Data_Set->setText(QApplication::translate("bmcClass", "Cargar", Q_NULLPTR));
         pushButton->setText(QApplication::translate("bmcClass", "Render volum\303\251trico", Q_NULLPTR));
         btnOpenDCMFolder->setText(QApplication::translate("bmcClass", "Abrir", Q_NULLPTR));
-        pushButton_2->setText(QApplication::translate("bmcClass", "Abrir Imagen", Q_NULLPTR));
-        toolBox->setItemText(toolBox->indexOf(page), QApplication::translate("bmcClass", "1. Entrada de Imagen DICOM", Q_NULLPTR));
-        toolBox->setItemText(toolBox->indexOf(page_2), QApplication::translate("bmcClass", "2. Visualizacion de Modelos 3D", Q_NULLPTR));
-        toolBox->setItemText(toolBox->indexOf(page_3), QApplication::translate("bmcClass", "3. Seleccion de Muestra de Analisis", Q_NULLPTR));
-        toolBox->setItemText(toolBox->indexOf(page_4), QApplication::translate("bmcClass", "4. Guardar y Salir", Q_NULLPTR));
+        btn_import->setText(QString());
+        label_5->setText(QApplication::translate("bmcClass", "Importar Imagen M\303\251dica", Q_NULLPTR));
+        label_6->setText(QApplication::translate("bmcClass", "Abrir proyecto existente", Q_NULLPTR));
+        btn_open->setText(QApplication::translate("bmcClass", "(icon)", Q_NULLPTR));
+        toolBox->setItemText(toolBox->indexOf(page), QApplication::translate("bmcClass", "1. Cargar Imagen", Q_NULLPTR));
+        groupBox->setTitle(QApplication::translate("bmcClass", "M\303\241scaras", Q_NULLPTR));
+        label->setText(QApplication::translate("bmcClass", "Lista de m\303\241scaras", Q_NULLPTR));
+        label_2->setText(QApplication::translate("bmcClass", "Nro. de regiones:", Q_NULLPTR));
+        toolBox->setItemText(toolBox->indexOf(page_2), QApplication::translate("bmcClass", "2. Construcci\303\263n de la Malla Volum\303\251trica", Q_NULLPTR));
+        pushButton_3->setText(QApplication::translate("bmcClass", "Seleccionar regi\303\263n 2D", Q_NULLPTR));
+        pushButton_4->setText(QApplication::translate("bmcClass", "Seleccionar regi\303\263n 3D", Q_NULLPTR));
+        toolBox->setItemText(toolBox->indexOf(page_3), QApplication::translate("bmcClass", "3. Cuantificaci\303\263n Osea", Q_NULLPTR));
+        label_3->setText(QApplication::translate("bmcClass", "Exportar Imagen", Q_NULLPTR));
+        label_4->setText(QApplication::translate("bmcClass", "Exportar Modelo", Q_NULLPTR));
+        pushButton_5->setText(QApplication::translate("bmcClass", "(icon)", Q_NULLPTR));
+        pushButton_6->setText(QApplication::translate("bmcClass", "(icon)", Q_NULLPTR));
+        toolBox->setItemText(toolBox->indexOf(page_4), QApplication::translate("bmcClass", "4. Exportar Datos", Q_NULLPTR));
         menuArchivo->setTitle(QApplication::translate("bmcClass", "Archivo", Q_NULLPTR));
     } // retranslateUi
 

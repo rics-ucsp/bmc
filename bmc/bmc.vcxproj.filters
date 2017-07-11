@@ -54,6 +54,9 @@
     <ClCompile Include="GeneratedFiles\Release\moc_thewidgetitem.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
+    <ClCompile Include="IO_panel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="bmc.h">
@@ -84,6 +87,9 @@
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_thewidgetitem.h">
       <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IO_panel.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

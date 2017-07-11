@@ -83,19 +83,6 @@
      <enum>Qt::Horizontal</enum>
     </property>
    </widget>
-   <widget class="QSlider" name="verticalSlider">
-    <property name="geometry">
-     <rect>
-      <x>1010</x>
-      <y>440</y>
-      <width>22</width>
-      <height>84</height>
-     </rect>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Vertical</enum>
-    </property>
-   </widget>
    <widget class="QToolBox" name="toolBox">
     <property name="geometry">
      <rect>
@@ -118,22 +105,62 @@
       </rect>
      </property>
      <attribute name="label">
-      <string>1. Entrada de Imagen DICOM</string>
+      <string>1. Cargar Imagen</string>
      </attribute>
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="btn_import">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>0</y>
+        <x>150</x>
+        <y>10</y>
         <width>101</width>
         <height>23</height>
        </rect>
       </property>
       <property name="text">
-       <string>Abrir Imagen</string>
+       <string/>
       </property>
       <property name="icon">
-       <iconset theme="new"/>
+       <iconset theme="new">
+        <normaloff>.</normaloff>.</iconset>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>10</y>
+        <width>131</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Importar Imagen Médica</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>50</y>
+        <width>131</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Abrir proyecto existente</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_open">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>50</y>
+        <width>101</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>(icon)</string>
       </property>
      </widget>
     </widget>
@@ -142,20 +169,112 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>261</width>
-       <height>403</height>
+       <width>98</width>
+       <height>28</height>
       </rect>
      </property>
      <attribute name="label">
-      <string>2. Visualizacion de Modelos 3D</string>
+      <string>2. Construcción de la Malla Volumétrica</string>
      </attribute>
      <widget class="QListWidget" name="listWidget">
       <property name="geometry">
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>256</width>
+        <width>261</width>
         <height>192</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>200</y>
+        <width>261</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Máscaras</string>
+      </property>
+      <widget class="QComboBox" name="comboBox_2">
+       <property name="geometry">
+        <rect>
+         <x>110</x>
+         <y>20</y>
+         <width>131</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>91</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Lista de máscaras</string>
+       </property>
+      </widget>
+      <widget class="QSlider" name="horizontalSlider">
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>50</y>
+         <width>121</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="QTextEdit" name="textEdit">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>50</y>
+         <width>51</width>
+         <height>31</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QTextEdit" name="textEdit_2">
+       <property name="geometry">
+        <rect>
+         <x>200</x>
+         <y>50</y>
+         <width>51</width>
+         <height>31</height>
+        </rect>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>300</y>
+        <width>101</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Nro. de regiones:</string>
+      </property>
+     </widget>
+     <widget class="QPlainTextEdit" name="plainTextEdit_3">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>300</y>
+        <width>51</width>
+        <height>31</height>
        </rect>
       </property>
      </widget>
@@ -165,27 +284,118 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>261</width>
-       <height>403</height>
+       <width>98</width>
+       <height>28</height>
       </rect>
      </property>
      <attribute name="label">
-      <string>3. Seleccion de Muestra de Analisis</string>
+      <string>3. Cuantificación Osea</string>
      </attribute>
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>20</y>
+        <width>201</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Seleccionar región 2D</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_4">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>50</y>
+        <width>201</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Seleccionar región 3D</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="page_4">
      <property name="geometry">
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>261</width>
-       <height>403</height>
+       <width>98</width>
+       <height>28</height>
       </rect>
      </property>
      <attribute name="label">
-      <string>4. Guardar y Salir</string>
+      <string>4. Exportar Datos</string>
      </attribute>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Exportar Imagen</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>50</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Exportar Modelo</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_5">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>20</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>(icon)</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_6">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>50</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>(icon)</string>
+      </property>
+     </widget>
     </widget>
+   </widget>
+   <widget class="QSlider" name="verticalSlider">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>450</y>
+      <width>22</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">

@@ -4,8 +4,7 @@
 using namespace std;
 
 bmc::bmc(QMainWindow *parent)
-	: QMainWindow(parent)
-{
+	: QMainWindow(parent){
 
 	/*QMessageBox Msgbox;
 	Msgbox.setText("ola k ase");
@@ -16,7 +15,8 @@ bmc::bmc(QMainWindow *parent)
 	readerDCMSeries = vtkSmartPointer<vtkDICOMImageReader>::New();
 	imageViewer = vtkSmartPointer<vtkImageViewer2>::New();
 
-	
+	IOpanel t(ui);
+	t.load();
 
 	//volume project
 	//imageViewer = vtkSmartPointer<vtkImageViewer2>::New();
@@ -78,9 +78,6 @@ bmc::bmc(QMainWindow *parent)
 		
 		//ui->listWidget->addItem(file);
 	}
-
-
-
 }
 
 void bmc::openDCMFolder(){
@@ -88,7 +85,6 @@ void bmc::openDCMFolder(){
 	QString folderNameDCM = QFileDialog::getExistingDirectory(this, tr("Open DCM Folder"), QDir::currentPath() );
 	std::string fileStd = folderNameDCM.toStdString();
 	drawDCMSeries(fileStd);
-
 }
 
 void bmc::drawDCMSeries(std::string folderDCM){

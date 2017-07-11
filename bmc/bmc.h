@@ -24,8 +24,8 @@
 #include <QDebug>
 #include <qcolordialog.h>
 
-
-//int mMaxSliderX;
+//separate by panels
+#include "IO_panel.h"
 
 
 //namespace Ui {
@@ -62,6 +62,4 @@ private:
 
 	vtkSmartPointer<vtkImageViewer2> imageViewer;
 	vtkSmartPointer<vtkInteractorStyleImage> interactorStyle;
-
-
 };

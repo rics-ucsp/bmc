@@ -40,8 +40,6 @@ class Ui_bmcClass
 public:
     QAction *actionOpen_Data_Set;
     QWidget *centralWidget;
-    QComboBox *comboBox;
-    QPushButton *pushButton;
     QVTKWidget *vtkRenderer;
     QTableWidget *tableWidget;
     QPushButton *btnOpenDCMFolder;
@@ -70,7 +68,6 @@ public:
     QLabel *label_4;
     QPushButton *pushButton_5;
     QPushButton *pushButton_6;
-    QSlider *verticalSlider;
     QMenuBar *menuBar;
     QMenu *menuArchivo;
     QToolBar *mainToolBar;
@@ -85,31 +82,25 @@ public:
         actionOpen_Data_Set->setObjectName(QStringLiteral("actionOpen_Data_Set"));
         centralWidget = new QWidget(bmcClass);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        comboBox = new QComboBox(centralWidget);
-        comboBox->setObjectName(QStringLiteral("comboBox"));
-        comboBox->setGeometry(QRect(580, 510, 69, 20));
-        pushButton = new QPushButton(centralWidget);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(480, 480, 101, 23));
         vtkRenderer = new QVTKWidget(centralWidget);
         vtkRenderer->setObjectName(QStringLiteral("vtkRenderer"));
-        vtkRenderer->setGeometry(QRect(280, 0, 771, 411));
+        vtkRenderer->setGeometry(QRect(280, 0, 771, 621));
         tableWidget = new QTableWidget(centralWidget);
         tableWidget->setObjectName(QStringLiteral("tableWidget"));
-        tableWidget->setGeometry(QRect(720, 420, 271, 131));
+        tableWidget->setGeometry(QRect(380, 630, 671, 91));
         btnOpenDCMFolder = new QPushButton(centralWidget);
         btnOpenDCMFolder->setObjectName(QStringLiteral("btnOpenDCMFolder"));
-        btnOpenDCMFolder->setGeometry(QRect(400, 500, 75, 23));
+        btnOpenDCMFolder->setGeometry(QRect(290, 630, 75, 23));
         hSliderDCM = new QSlider(centralWidget);
         hSliderDCM->setObjectName(QStringLiteral("hSliderDCM"));
-        hSliderDCM->setGeometry(QRect(300, 450, 84, 22));
+        hSliderDCM->setGeometry(QRect(290, 670, 84, 22));
         hSliderDCM->setOrientation(Qt::Horizontal);
         toolBox = new QToolBox(centralWidget);
         toolBox->setObjectName(QStringLiteral("toolBox"));
-        toolBox->setGeometry(QRect(10, 0, 261, 511));
+        toolBox->setGeometry(QRect(10, 0, 261, 731));
         page = new QWidget();
         page->setObjectName(QStringLiteral("page"));
-        page->setGeometry(QRect(0, 0, 261, 403));
+        page->setGeometry(QRect(0, 0, 261, 623));
         btn_import = new QPushButton(page);
         btn_import->setObjectName(QStringLiteral("btn_import"));
         btn_import->setGeometry(QRect(150, 10, 101, 23));
@@ -133,7 +124,7 @@ public:
         toolBox->addItem(page, QStringLiteral("1. Cargar Imagen"));
         page_2 = new QWidget();
         page_2->setObjectName(QStringLiteral("page_2"));
-        page_2->setGeometry(QRect(0, 0, 98, 28));
+        page_2->setGeometry(QRect(0, 0, 100, 30));
         listWidget = new QListWidget(page_2);
         listWidget->setObjectName(QStringLiteral("listWidget"));
         listWidget->setGeometry(QRect(0, 0, 261, 192));
@@ -165,7 +156,7 @@ public:
         toolBox->addItem(page_2, QString::fromUtf8("2. Construcci\303\263n de la Malla Volum\303\251trica"));
         page_3 = new QWidget();
         page_3->setObjectName(QStringLiteral("page_3"));
-        page_3->setGeometry(QRect(0, 0, 98, 28));
+        page_3->setGeometry(QRect(0, 0, 100, 30));
         pushButton_3 = new QPushButton(page_3);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
         pushButton_3->setGeometry(QRect(30, 20, 201, 23));
@@ -175,7 +166,7 @@ public:
         toolBox->addItem(page_3, QString::fromUtf8("3. Cuantificaci\303\263n Osea"));
         page_4 = new QWidget();
         page_4->setObjectName(QStringLiteral("page_4"));
-        page_4->setGeometry(QRect(0, 0, 98, 28));
+        page_4->setGeometry(QRect(0, 0, 100, 30));
         label_3 = new QLabel(page_4);
         label_3->setObjectName(QStringLiteral("label_3"));
         label_3->setGeometry(QRect(20, 20, 91, 16));
@@ -189,10 +180,6 @@ public:
         pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
         pushButton_6->setGeometry(QRect(130, 50, 75, 23));
         toolBox->addItem(page_4, QStringLiteral("4. Exportar Datos"));
-        verticalSlider = new QSlider(centralWidget);
-        verticalSlider->setObjectName(QStringLiteral("verticalSlider"));
-        verticalSlider->setGeometry(QRect(680, 450, 22, 71));
-        verticalSlider->setOrientation(Qt::Vertical);
         bmcClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(bmcClass);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -222,7 +209,6 @@ public:
     {
         bmcClass->setWindowTitle(QApplication::translate("bmcClass", "bmc", Q_NULLPTR));
         actionOpen_Data_Set->setText(QApplication::translate("bmcClass", "Cargar", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("bmcClass", "Render volum\303\251trico", Q_NULLPTR));
         btnOpenDCMFolder->setText(QApplication::translate("bmcClass", "Abrir", Q_NULLPTR));
         btn_import->setText(QString());
         label_5->setText(QApplication::translate("bmcClass", "Importar Imagen M\303\251dica", Q_NULLPTR));

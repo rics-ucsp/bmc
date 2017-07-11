@@ -71,6 +71,10 @@ TheWidgetItem::TheWidgetItem(QString file, QVTKWidget *widgetvtk, vtkRenderer* r
 
 	widgetVTK->GetRenderWindow()->AddRenderer(renderer);
 	widgetVTK->show();
+
+	ui->sldrOpacity->setMinimum(1);
+	ui->sldrOpacity->setMaximum(100);
+	ui->sldrOpacity->setValue(50);
 }
 
 TheWidgetItem::~TheWidgetItem()
@@ -136,5 +140,17 @@ void TheWidgetItem::on_btnColor_clicked() {
 
 }
 
+
+void TheWidgetItem::on_sldrOpacity_sliderMoved(int position) {
+	
+	mapper->Update();
+	actor->GetProperty()->SetOpacity(double(position)/100);
+	renderer->AddActor(actor);
+
+	widgetVTK->GetRenderWindow()->AddRenderer(renderer);
+	widgetVTK->GetRenderWindow()->Render();
+	widgetVTK->show();
+
+}
 
 

@@ -48,7 +48,7 @@ bmc::bmc(QMainWindow *parent)
 
 	////connect(this->ui->pushButton, SIGNAL(clicked()), this, SLOT(pushButtonClicked()));
 
-	//connect(this->ui->actionOpen_Data_Set, SIGNAL(triggered()), this, SLOT(openDataSet()));
+	connect(this->ui->actionOpen_Data_Set, SIGNAL(triggered()), this, SLOT(openDataSet()));
 	//connect(this->ui->verticalSlider, SIGNAL(valueChanged(int)), this, SLOT(updateSlice()));
 
 	//********** listwidget
@@ -72,9 +72,7 @@ bmc::bmc(QMainWindow *parent)
 		//listWidgetItem->setSizeHint(theWidgetItem->sizeHint());
 		listWidgetItem->setSizeHint(QSize(0, 23));
 		ui->listWidget->setItemWidget(listWidgetItem, theWidgetItem);
-		ui->listWidget->addItem(listWidgetItem);
-
-		
+		ui->listWidget->addItem(listWidgetItem);		
 		
 		//ui->listWidget->addItem(file);
 	}
@@ -113,6 +111,8 @@ void bmc::on_hSliderDCM_sliderMoved(int position){
 }
 
 // methods for volume rendering
+
+/*
 void bmc::updateImageSlice(){
 	int _MinSlice;
 	int _MaxSlice;
@@ -136,6 +136,7 @@ void bmc::updateSlice(){
 	}
 }
 
+*/
 void bmc::openDataSet(){
 	QString fileName;
 	fileName = QFileDialog::getExistingDirectory(this, tr("Open Local Data Set"), "C:/Users/tony/Downloads/samples/extremidad", QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);

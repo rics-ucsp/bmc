@@ -50,8 +50,8 @@ private slots:
 	virtual void slotExit();
 
 	virtual void openDataSet();
-	virtual void updateImageSlice();
-	virtual void updateSlice();
+	//virtual void updateImageSlice();
+	//virtual void updateSlice();
 
 private:
 	Ui_bmcClass *ui;

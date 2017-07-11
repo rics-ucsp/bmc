@@ -76,6 +76,9 @@ public:
         sizePolicy1.setVerticalStretch(0);
         sizePolicy1.setHeightForWidth(sldrOpacity->sizePolicy().hasHeightForWidth());
         sldrOpacity->setSizePolicy(sizePolicy1);
+        sldrOpacity->setCursor(QCursor(Qt::SizeHorCursor));
+        sldrOpacity->setMaximum(99);
+        sldrOpacity->setSingleStep(1);
         sldrOpacity->setOrientation(Qt::Horizontal);
 
         gridLayout->addWidget(sldrOpacity, 0, 2, 1, 1);

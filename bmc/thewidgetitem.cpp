@@ -21,16 +21,23 @@
 
 #include <QString>
 #include <string>
+#include <QMessageBox>
+#include <QColor>
+#include <QColorDialog>
 
-TheWidgetItem::TheWidgetItem(QString file, QVTKWidget *widgetvtk, vtkRenderer* renderer_, int color, QWidget *parent) :
+
+
+TheWidgetItem::TheWidgetItem(QString file, QVTKWidget *widgetvtk, vtkRenderer* renderer_, QColor &color, QWidget *parent) :
 	QWidget(parent),
-	ui(new Ui::TheWidgetItem)
+	ui(new Ui::TheWidgetItem) 
 {
 	ui->setupUi(this);
 	vtkFile = "samples/" + file;
 	visible = true;
 	widgetVTK = widgetvtk;
+	opacity = 0.75;
 	ui->label->setText(file);
+
 
 	reader = vtkSmartPointer<vtkUnstructuredGridReader>::New();
 	reader->SetFileName(vtkFile.toStdString().c_str());
@@ -39,8 +46,22 @@ TheWidgetItem::TheWidgetItem(QString file, QVTKWidget *widgetvtk, vtkRenderer* r
 	mapper = vtkSmartPointer<vtkDataSetMapper>::New();
 	mapper->SetInputConnection(reader->GetOutputPort());
 
+
 	actor = vtkSmartPointer<vtkActor>::New();
-	actor->GetProperty()->SetColor(color%2, 1%color, 1);
+	double r = color.red()/255;
+	double g = color.green() / 255;
+	double b = color.blue() / 255;
+
+
+	QPalette pal;
+	pal.setColor(QPalette::Button, color.rgb());
+	ui->btnColor->setAutoFillBackground(true);
+	ui->btnColor->setPalette(pal);
+	ui->btnColor->update();
+
+	
+
+	actor->GetProperty()->SetColor(r, g, b);
 	actor->GetProperty()->SetOpacity(0.5);
 	actor->SetMapper(mapper);
 
@@ -88,3 +109,32 @@ void TheWidgetItem::on_pressThisBtn_clicked() {
 
 
 }
+
+
+void TheWidgetItem::on_btnColor_clicked() {
+
+	QColor newColor = QColorDialog::getColor(Qt::white, this);
+
+	QPalette pal;
+	pal.setColor(QPalette::Button, newColor);
+	ui->btnColor->setAutoFillBackground(true);
+	ui->btnColor->setPalette(pal);
+	ui->btnColor->update();
+
+
+	double r = newColor.red() / 255;
+	double g = newColor.green() / 255;
+	double b = newColor.blue() / 255;
+	
+	mapper->Update();
+	actor->GetProperty()->SetColor(r, g, b);
+	renderer->AddActor(actor);
+
+	widgetVTK->GetRenderWindow()->AddRenderer(renderer);
+	widgetVTK->GetRenderWindow()->Render();
+	widgetVTK->show();
+
+}
+
+
+

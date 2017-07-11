@@ -53,9 +53,13 @@ bmc::bmc(QMainWindow *parent)
 
 	//********** listwidget
 	QVector<QString> archivosVtk;
-	archivosVtk.push_back("1file.vtk");
-	archivosVtk.push_back("crane.vtk");
-	archivosVtk.push_back("tauro.vtk");
+		archivosVtk.push_back("1file.vtk");
+		archivosVtk.push_back("crane.vtk");
+		archivosVtk.push_back("tauro.vtk");
+	QVector<QColor> colores;
+		colores.push_back(QColor(255, 255, 0));
+		colores.push_back(QColor(0, 255, 255));
+		colores.push_back(QColor(255, 0, 255));
 
 	vtkSmartPointer<vtkRenderer> renderer = vtkSmartPointer<vtkRenderer>::New();
 
@@ -63,11 +67,14 @@ bmc::bmc(QMainWindow *parent)
 
 		QListWidgetItem *listWidgetItem = new QListWidgetItem(ui->listWidget);
 		ui->listWidget->addItem(listWidgetItem);
-		TheWidgetItem *theWidgetItem = new TheWidgetItem(archivosVtk[i],this->ui->vtkRenderer, renderer,i+1);
+		TheWidgetItem *theWidgetItem = new TheWidgetItem(archivosVtk[i], this->ui->vtkRenderer, renderer, colores[i]);
+		
 		//listWidgetItem->setSizeHint(theWidgetItem->sizeHint());
 		listWidgetItem->setSizeHint(QSize(0, 23));
 		ui->listWidget->setItemWidget(listWidgetItem, theWidgetItem);
 		ui->listWidget->addItem(listWidgetItem);
+
+		
 		
 		//ui->listWidget->addItem(file);
 	}

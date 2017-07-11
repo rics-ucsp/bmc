@@ -36,17 +36,20 @@ class TheWidgetItem : public QWidget
 	Q_OBJECT
 
 public:
-	TheWidgetItem(QString file, QVTKWidget *widgetvtk, vtkRenderer* renderer,int color, QWidget *parent = 0);
+	TheWidgetItem(QString file, QVTKWidget *widgetvtk, vtkRenderer* renderer, QColor& color,QWidget *parent = 0);
 	~TheWidgetItem();
 
 
 	private slots:
 	void on_pressThisBtn_clicked();
-
+	void on_btnColor_clicked();
+	
 private:
+
 	Ui::TheWidgetItem *ui;
 	QString vtkFile;
 	bool visible;
+	float opacity;
 	QVTKWidget *widgetVTK;
 	vtkSmartPointer<vtkUnstructuredGridReader> reader;
 	vtkSmartPointer<vtkDataSetMapper> mapper;

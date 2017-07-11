@@ -72,10 +72,7 @@ bmc::bmc(QMainWindow *parent)
 		//listWidgetItem->setSizeHint(theWidgetItem->sizeHint());
 		listWidgetItem->setSizeHint(QSize(0, 23));
 		ui->listWidget->setItemWidget(listWidgetItem, theWidgetItem);
-		ui->listWidget->addItem(listWidgetItem);
-
-		
-		
+		ui->listWidget->addItem(listWidgetItem);		
 		//ui->listWidget->addItem(file);
 	}
 }

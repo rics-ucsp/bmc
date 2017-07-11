@@ -22,6 +22,7 @@
 #include "thewidgetitem.h"
 #include <QVector>
 #include <QDebug>
+#include <qcolordialog.h>
 
 
 //int mMaxSliderX;

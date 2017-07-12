@@ -57,6 +57,9 @@
     <ClCompile Include="IO_panel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="quantification_panel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="bmc.h">
@@ -89,6 +92,9 @@
       <Filter>Generated Files</Filter>
     </ClInclude>
     <ClInclude Include="IO_panel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="quantification_panel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

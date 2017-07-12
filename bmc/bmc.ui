@@ -70,7 +70,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="page">
      <property name="geometry">
@@ -146,8 +146,8 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>100</width>
-       <height>30</height>
+       <width>261</width>
+       <height>623</height>
       </rect>
      </property>
      <attribute name="label">
@@ -261,14 +261,14 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>100</width>
-       <height>30</height>
+       <width>261</width>
+       <height>623</height>
       </rect>
      </property>
      <attribute name="label">
       <string>3. Cuantificación Osea</string>
      </attribute>
-     <widget class="QPushButton" name="pushButton_3">
+     <widget class="QPushButton" name="btn_2D_selection">
       <property name="geometry">
        <rect>
         <x>30</x>
@@ -281,7 +281,7 @@
        <string>Seleccionar región 2D</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_4">
+     <widget class="QPushButton" name="btn_3D_selection">
       <property name="geometry">
        <rect>
         <x>30</x>
@@ -300,8 +300,8 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>100</width>
-       <height>30</height>
+       <width>261</width>
+       <height>623</height>
       </rect>
      </property>
      <attribute name="label">

@@ -64,7 +64,6 @@ bmc::bmc(QMainWindow *parent)
 	vtkSmartPointer<vtkRenderer> renderer = vtkSmartPointer<vtkRenderer>::New();
 
 	for (int i = 0; i < 3; ++i) {
-
 		QListWidgetItem *listWidgetItem = new QListWidgetItem(ui->listWidget);
 		ui->listWidget->addItem(listWidgetItem);
 		TheWidgetItem *theWidgetItem = new TheWidgetItem(archivosVtk[i], this->ui->vtkRenderer, renderer, colores[i]);

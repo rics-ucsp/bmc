@@ -7,8 +7,6 @@
 #include <QLabel>
 
 #include <QtWidgets/QMainWindow>
-
-
 #include "ui_bmc.h"
 
 class IOpanel 

@@ -26,6 +26,7 @@
 
 //separate by panels
 #include "IO_panel.h"
+#include "quantification_panel.h"
 
 
 //namespace Ui {
@@ -48,7 +49,6 @@ private slots:
 	void on_hSliderDCM_sliderMoved(int position);
 
 	virtual void slotExit();
-
 	virtual void openDataSet();
 	//virtual void updateImageSlice();
 	//virtual void updateSlice();

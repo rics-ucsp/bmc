@@ -62,7 +62,7 @@ public:
     QPlainTextEdit *plainTextEdit_3;
     QWidget *page_3;
     QPushButton *pushButton_3;
-    QPushButton *pushButton_4;
+    QPushButton *btn_3D_selection;
     QWidget *page_4;
     QLabel *label_3;
     QLabel *label_4;
@@ -124,7 +124,7 @@ public:
         toolBox->addItem(page, QStringLiteral("1. Cargar Imagen"));
         page_2 = new QWidget();
         page_2->setObjectName(QStringLiteral("page_2"));
-        page_2->setGeometry(QRect(0, 0, 100, 30));
+        page_2->setGeometry(QRect(0, 0, 261, 623));
         listWidget = new QListWidget(page_2);
         listWidget->setObjectName(QStringLiteral("listWidget"));
         listWidget->setGeometry(QRect(0, 0, 261, 192));
@@ -156,17 +156,17 @@ public:
         toolBox->addItem(page_2, QString::fromUtf8("2. Construcci\303\263n de la Malla Volum\303\251trica"));
         page_3 = new QWidget();
         page_3->setObjectName(QStringLiteral("page_3"));
-        page_3->setGeometry(QRect(0, 0, 100, 30));
+        page_3->setGeometry(QRect(0, 0, 261, 623));
         pushButton_3 = new QPushButton(page_3);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
         pushButton_3->setGeometry(QRect(30, 20, 201, 23));
-        pushButton_4 = new QPushButton(page_3);
-        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
-        pushButton_4->setGeometry(QRect(30, 50, 201, 23));
+        btn_3D_selection = new QPushButton(page_3);
+        btn_3D_selection->setObjectName(QStringLiteral("btn_3D_selection"));
+        btn_3D_selection->setGeometry(QRect(30, 50, 201, 23));
         toolBox->addItem(page_3, QString::fromUtf8("3. Cuantificaci\303\263n Osea"));
         page_4 = new QWidget();
         page_4->setObjectName(QStringLiteral("page_4"));
-        page_4->setGeometry(QRect(0, 0, 100, 30));
+        page_4->setGeometry(QRect(0, 0, 261, 623));
         label_3 = new QLabel(page_4);
         label_3->setObjectName(QStringLiteral("label_3"));
         label_3->setGeometry(QRect(20, 20, 91, 16));
@@ -199,7 +199,7 @@ public:
 
         retranslateUi(bmcClass);
 
-        toolBox->setCurrentIndex(0);
+        toolBox->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(bmcClass);
@@ -220,7 +220,7 @@ public:
         label_2->setText(QApplication::translate("bmcClass", "Nro. de regiones:", Q_NULLPTR));
         toolBox->setItemText(toolBox->indexOf(page_2), QApplication::translate("bmcClass", "2. Construcci\303\263n de la Malla Volum\303\251trica", Q_NULLPTR));
         pushButton_3->setText(QApplication::translate("bmcClass", "Seleccionar regi\303\263n 2D", Q_NULLPTR));
-        pushButton_4->setText(QApplication::translate("bmcClass", "Seleccionar regi\303\263n 3D", Q_NULLPTR));
+        btn_3D_selection->setText(QApplication::translate("bmcClass", "Seleccionar regi\303\263n 3D", Q_NULLPTR));
         toolBox->setItemText(toolBox->indexOf(page_3), QApplication::translate("bmcClass", "3. Cuantificaci\303\263n Osea", Q_NULLPTR));
         label_3->setText(QApplication::translate("bmcClass", "Exportar Imagen", Q_NULLPTR));
         label_4->setText(QApplication::translate("bmcClass", "Exportar Modelo", Q_NULLPTR));

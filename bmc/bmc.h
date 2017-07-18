@@ -29,9 +29,33 @@
 #include "quantification_panel.h"
 
 
+#include <vtkRenderWindow.h>
+#include <vtkRenderer.h>
+#include <vtkRenderWindowInteractor.h>
+
+//para 2d selection
+	#include <vtkSmartPointer.h>
+	#include <vtkImageCanvasSource2D.h>
+	#include <vtkLogoRepresentation.h>
+	#include <vtkLogoWidget.h>
+	#include <vtkProperty2D.h>
+	#include <vtkRenderWindow.h>
+	#include <vtkRenderWindowInteractor.h>
+	#include <vtkRenderer.h>
+
 //namespace Ui {
 //	class bmc;
 //}
+
+static vtkSmartPointer<vtkRenderer> mainRenderer;
+static vtkSmartPointer<vtkRenderer> xRenderer;
+static vtkSmartPointer<vtkRenderer> yRenderer;
+static vtkSmartPointer<vtkRenderer> zRenderer;
+
+static vtkSmartPointer<vtkImageCanvasSource2D> drawing;
+static vtkSmartPointer<vtkLogoRepresentation> logoRepresentation;
+static vtkSmartPointer<vtkLogoWidget> logoWidget;
+
 
 class bmc : public QMainWindow
 {
@@ -46,6 +70,8 @@ private slots:
 	void openDCMFolder();
 	void drawDCMSeries(std::string folderDCM);
 	void on_btnOpenDCMFolder_clicked();
+	void on_btn2Dselection_clicked();
+	
 	void on_hSliderDCM_sliderMoved(int position);
 
 	virtual void slotExit();
@@ -54,6 +80,9 @@ private slots:
 	//virtual void updateSlice();
 
 private:
+
+	
+
 	Ui_bmcClass *ui;
 	vtkSmartPointer<vtkDICOMImageReader> readerDCMSeries;
 	vtkSmartPointer<vtkImageViewer2> imageViewerDCMSeriesX;
@@ -62,4 +91,6 @@ private:
 
 	vtkSmartPointer<vtkImageViewer2> imageViewer;
 	vtkSmartPointer<vtkInteractorStyleImage> interactorStyle;
+
+
 };

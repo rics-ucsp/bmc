@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1060</width>
-    <height>795</height>
+    <width>1299</width>
+    <height>939</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,28 +17,28 @@
    <widget class="QVTKWidget" name="vtkRenderer">
     <property name="geometry">
      <rect>
-      <x>280</x>
-      <y>0</y>
-      <width>771</width>
-      <height>621</height>
+      <x>780</x>
+      <y>430</y>
+      <width>511</width>
+      <height>351</height>
      </rect>
     </property>
    </widget>
    <widget class="QTableWidget" name="tableWidget">
     <property name="geometry">
      <rect>
-      <x>380</x>
-      <y>630</y>
-      <width>671</width>
-      <height>91</height>
+      <x>410</x>
+      <y>790</y>
+      <width>871</width>
+      <height>41</height>
      </rect>
     </property>
    </widget>
    <widget class="QPushButton" name="btnOpenDCMFolder">
     <property name="geometry">
      <rect>
-      <x>290</x>
-      <y>630</y>
+      <x>280</x>
+      <y>790</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -50,8 +50,8 @@
    <widget class="QSlider" name="hSliderDCM">
     <property name="geometry">
      <rect>
-      <x>290</x>
-      <y>670</y>
+      <x>370</x>
+      <y>790</y>
       <width>84</width>
       <height>22</height>
      </rect>
@@ -64,20 +64,26 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>0</y>
-      <width>261</width>
+      <y>50</y>
+      <width>241</width>
       <height>731</height>
      </rect>
     </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="lineWidth">
+     <number>5</number>
+    </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="page">
      <property name="geometry">
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>261</width>
+       <width>241</width>
        <height>623</height>
       </rect>
      </property>
@@ -87,57 +93,147 @@
      <widget class="QPushButton" name="btn_import">
       <property name="geometry">
        <rect>
-        <x>150</x>
+        <x>170</x>
         <y>10</y>
-        <width>101</width>
-        <height>23</height>
+        <width>31</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="text">
        <string/>
       </property>
       <property name="icon">
-       <iconset theme="new">
-        <normaloff>.</normaloff>.</iconset>
+       <iconset resource="bmc.qrc">
+        <normaloff>:/bmc/icons/file_import_original.png</normaloff>:/bmc/icons/file_import_original.png</iconset>
       </property>
      </widget>
      <widget class="QLabel" name="label_5">
       <property name="geometry">
        <rect>
-        <x>20</x>
+        <x>10</x>
         <y>10</y>
         <width>131</width>
         <height>20</height>
        </rect>
       </property>
       <property name="text">
-       <string>Importar Imagen Médica</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Importar Imagen Médica&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_6">
       <property name="geometry">
        <rect>
-        <x>20</x>
+        <x>10</x>
         <y>50</y>
         <width>131</width>
         <height>20</height>
        </rect>
       </property>
       <property name="text">
-       <string>Abrir proyecto existente</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Abrir proyecto existente&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QPushButton" name="btn_open">
       <property name="geometry">
        <rect>
-        <x>150</x>
+        <x>170</x>
         <y>50</y>
-        <width>101</width>
-        <height>23</height>
+        <width>31</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="text">
-       <string>(icon)</string>
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="bmc.qrc">
+        <normaloff>:/bmc/icons/file_open_original.png</normaloff>:/bmc/icons/file_open_original.png</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_open_2">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>90</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="bmc.qrc">
+        <normaloff>:/bmc/icons/file_import_original.png</normaloff>:/bmc/icons/file_import_original.png</iconset>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_11">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>90</y>
+        <width>131</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Cargar  Modelo Triangular&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_12">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>100</y>
+        <width>71</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:7pt; color:#4f4f4f;&quot;&gt;formato VTK&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_13">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>150</y>
+        <width>71</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:7pt; color:#4f4f4f;&quot;&gt;formato VTK&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_14">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>140</y>
+        <width>151</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Cargar  Modelo Tetraédrico&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_open_3">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>130</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="bmc.qrc">
+        <normaloff>:/bmc/icons/file_open_original.png</normaloff>:/bmc/icons/file_open_original.png</iconset>
       </property>
      </widget>
     </widget>
@@ -146,7 +242,7 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>261</width>
+       <width>241</width>
        <height>623</height>
       </rect>
      </property>
@@ -203,7 +299,7 @@
         <rect>
          <x>70</x>
          <y>50</y>
-         <width>121</width>
+         <width>91</width>
          <height>22</height>
         </rect>
        </property>
@@ -224,7 +320,7 @@
       <widget class="QTextEdit" name="textEdit_2">
        <property name="geometry">
         <rect>
-         <x>200</x>
+         <x>190</x>
          <y>50</y>
          <width>51</width>
          <height>31</height>
@@ -261,37 +357,71 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>261</width>
+       <width>241</width>
        <height>623</height>
       </rect>
      </property>
      <attribute name="label">
       <string>3. Cuantificación Osea</string>
      </attribute>
-     <widget class="QPushButton" name="btn_2D_selection">
+     <widget class="QPushButton" name="btn2Dselection">
       <property name="geometry">
        <rect>
-        <x>30</x>
+        <x>200</x>
         <y>20</y>
-        <width>201</width>
+        <width>31</width>
         <height>23</height>
        </rect>
       </property>
       <property name="text">
-       <string>Seleccionar región 2D</string>
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="bmc.qrc">
+        <normaloff>:/bmc/icons/select2d.png</normaloff>:/bmc/icons/select2d.png</iconset>
       </property>
      </widget>
-     <widget class="QPushButton" name="btn_3D_selection">
+     <widget class="QPushButton" name="btn3Dselection">
       <property name="geometry">
        <rect>
-        <x>30</x>
+        <x>200</x>
         <y>50</y>
-        <width>201</width>
+        <width>31</width>
         <height>23</height>
        </rect>
       </property>
       <property name="text">
-       <string>Seleccionar región 3D</string>
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="bmc.qrc">
+        <normaloff>:/bmc/icons/select3d.png</normaloff>:/bmc/icons/select3d.png</iconset>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_16">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>141</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Seleccionar región 2D&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_17">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>50</y>
+        <width>131</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Seleccionar región 3D&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
     </widget>
@@ -300,7 +430,7 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>261</width>
+       <width>241</width>
        <height>623</height>
       </rect>
      </property>
@@ -312,12 +442,12 @@
        <rect>
         <x>20</x>
         <y>20</y>
-        <width>91</width>
+        <width>101</width>
         <height>16</height>
        </rect>
       </property>
       <property name="text">
-       <string>Exportar Imagen</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Exportar Imagen&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_4">
@@ -325,41 +455,357 @@
        <rect>
         <x>20</x>
         <y>50</y>
-        <width>91</width>
+        <width>101</width>
         <height>16</height>
        </rect>
       </property>
       <property name="text">
-       <string>Exportar Modelo</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Exportar Modelo 3D&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_5">
       <property name="geometry">
        <rect>
-        <x>130</x>
+        <x>174</x>
         <y>20</y>
-        <width>75</width>
-        <height>23</height>
+        <width>31</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="text">
-       <string>(icon)</string>
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="bmc.qrc">
+        <normaloff>:/bmc/icons/foto.png</normaloff>:/bmc/icons/foto.png</iconset>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_6">
       <property name="geometry">
        <rect>
-        <x>130</x>
-        <y>50</y>
-        <width>75</width>
-        <height>23</height>
+        <x>174</x>
+        <y>63</y>
+        <width>31</width>
+        <height>21</height>
        </rect>
       </property>
       <property name="text">
-       <string>(icon)</string>
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="bmc.qrc">
+        <normaloff>:/bmc/icons/3d.png</normaloff>:/bmc/icons/3d.png</iconset>
       </property>
      </widget>
     </widget>
+   </widget>
+   <widget class="QVTKWidget" name="vtkRenderer_dicom_1">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>50</y>
+      <width>511</width>
+      <height>371</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QVTKWidget" name="vtkRenderer_dicom_2">
+    <property name="geometry">
+     <rect>
+      <x>780</x>
+      <y>50</y>
+      <width>511</width>
+      <height>371</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QVTKWidget" name="vtkRenderer_dicom_3">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>430</y>
+      <width>511</width>
+      <height>350</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>50</y>
+      <width>71</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#5f5f5f;&quot;&gt;Corte Axial&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>780</x>
+      <y>50</y>
+      <width>81</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#5f5f5f;&quot;&gt;Corte Sagital&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9">
+    <property name="geometry">
+     <rect>
+      <x>780</x>
+      <y>430</y>
+      <width>47</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#5f5f5f;&quot;&gt;Volumen&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_10">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>430</y>
+      <width>71</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#5f5f5f;&quot;&gt;Corte Coronal&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_4">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>0</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="bmc.qrc">
+      <normaloff>:/bmc/icons/tool_zoom_original.png</normaloff>:/bmc/icons/tool_zoom_original.png</iconset>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_7">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>0</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="bmc.qrc">
+      <normaloff>:/bmc/icons/tool_zoom_select_original.png</normaloff>:/bmc/icons/tool_zoom_select_original.png</iconset>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_8">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>0</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="bmc.qrc">
+      <normaloff>:/bmc/icons/tool_rotate_original.png</normaloff>:/bmc/icons/tool_rotate_original.png</iconset>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_9">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>0</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="bmc.qrc">
+      <normaloff>:/bmc/icons/tool_translate_original.png</normaloff>:/bmc/icons/tool_translate_original.png</iconset>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_10">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>0</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="bmc.qrc">
+      <normaloff>:/bmc/icons/tool_contrast_original.png</normaloff>:/bmc/icons/tool_contrast_original.png</iconset>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_15">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>860</y>
+      <width>41</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="palette">
+     <palette>
+      <active>
+       <colorrole role="WindowText">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Text">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </active>
+      <inactive>
+       <colorrole role="WindowText">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Text">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </inactive>
+      <disabled>
+       <colorrole role="WindowText">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>120</red>
+          <green>120</green>
+          <blue>120</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Text">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>120</red>
+          <green>120</green>
+          <blue>120</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </disabled>
+     </palette>
+    </property>
+    <property name="text">
+     <string>Listo</string>
+    </property>
+   </widget>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>-150</x>
+      <y>850</y>
+      <width>1451</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="bmc.qrc">
+      <normaloff>:/bmc/icons/file_import_original.png</normaloff>:/bmc/icons/file_import_original.png</iconset>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>0</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="bmc.qrc">
+      <normaloff>:/bmc/icons/file_open.png</normaloff>:/bmc/icons/file_open.png</iconset>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_3">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>0</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="bmc.qrc">
+      <normaloff>:/bmc/icons/file_save_original.png</normaloff>:/bmc/icons/file_save_original.png</iconset>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -367,7 +813,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1060</width>
+     <width>1299</width>
      <height>21</height>
     </rect>
    </property>
@@ -377,7 +823,25 @@
     </property>
     <addaction name="actionOpen_Data_Set"/>
    </widget>
+   <widget class="QMenu" name="menuHerramientas">
+    <property name="title">
+     <string>Herramientas</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuOpciones">
+    <property name="title">
+     <string>Opciones</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuAyuda">
+    <property name="title">
+     <string>Ayuda</string>
+    </property>
+   </widget>
    <addaction name="menuArchivo"/>
+   <addaction name="menuHerramientas"/>
+   <addaction name="menuOpciones"/>
+   <addaction name="menuAyuda"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">

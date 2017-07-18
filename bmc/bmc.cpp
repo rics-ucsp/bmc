@@ -61,12 +61,26 @@ bmc::bmc(QMainWindow *parent)
 		colores.push_back(QColor(0, 255, 255));
 		colores.push_back(QColor(255, 0, 255));
 
-	vtkSmartPointer<vtkRenderer> renderer = vtkSmartPointer<vtkRenderer>::New();
+	///vtkSmartPointer<vtkRenderer> renderer = vtkSmartPointer<vtkRenderer>::New();
+		mainRenderer = vtkSmartPointer<vtkRenderer>::New();
+		xRenderer = vtkSmartPointer<vtkRenderer>::New();
+		yRenderer = vtkSmartPointer<vtkRenderer>::New();
+		zRenderer = vtkSmartPointer<vtkRenderer>::New();
+		xRenderer->SetBackground(39/255, 40/255, 34/255);
+		yRenderer->SetBackground(39 / 255, 40 / 255, 34 / 255);
+		zRenderer->SetBackground(39 / 255, 40 / 255, 34 / 255);
+		
+		ui->vtkRenderer_dicom_1->GetRenderWindow()->AddRenderer(xRenderer);
+		ui->vtkRenderer_dicom_1->show();
+		ui->vtkRenderer_dicom_2->GetRenderWindow()->AddRenderer(yRenderer);
+		ui->vtkRenderer_dicom_2->show();
+		ui->vtkRenderer_dicom_3->GetRenderWindow()->AddRenderer(zRenderer);
+		ui->vtkRenderer_dicom_3->show();
 
 	for (int i = 0; i < 3; ++i) {
 		QListWidgetItem *listWidgetItem = new QListWidgetItem(ui->listWidget);
 		ui->listWidget->addItem(listWidgetItem);
-		TheWidgetItem *theWidgetItem = new TheWidgetItem(archivosVtk[i], this->ui->vtkRenderer, renderer, colores[i]);
+		TheWidgetItem *theWidgetItem = new TheWidgetItem(archivosVtk[i], this->ui->vtkRenderer, mainRenderer, colores[i]);
 		
 		//listWidgetItem->setSizeHint(theWidgetItem->sizeHint());
 		listWidgetItem->setSizeHint(QSize(0, 23));
@@ -75,6 +89,8 @@ bmc::bmc(QMainWindow *parent)
 
 		//ui->listWidget->addItem(file);
 	}
+
+	//this->ui->vtkRenderer->GetRenderWindow()->GetInteractor()->Start();
 }
 
 void bmc::openDCMFolder(){
@@ -137,6 +153,7 @@ void bmc::updateSlice(){
 
 */
 void bmc::openDataSet(){
+	
 	QString fileName;
 	fileName = QFileDialog::getExistingDirectory(this, tr("Open Local Data Set"), "C:/Users/tony/Downloads/samples/extremidad", QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
 	// Convert QString to std::string
@@ -249,4 +266,42 @@ void bmc::openDataSet(){
 
 void bmc::slotExit(){
 	qApp->exit();
+}
+
+
+void bmc::on_btn2Dselection_clicked() {
+	
+	this->ui->vtkRenderer->GetRenderWindow()->AddRenderer(mainRenderer);
+	
+	// Create an image
+	drawing = vtkSmartPointer<vtkImageCanvasSource2D>::New();
+	drawing->SetScalarTypeToUnsignedChar();
+	drawing->SetNumberOfScalarComponents(3);
+	drawing->SetExtent(0, 100, 0, 100, 0, 0);
+
+	// Clear the image
+	drawing->SetDrawColor(255, 0, 0);
+	drawing->FillBox(0, 100, 0, 100);
+	drawing->SetDrawColor(0, 0, 0);
+	drawing->Update();
+
+	logoRepresentation = vtkSmartPointer<vtkLogoRepresentation>::New();
+	logoRepresentation->SetImage(drawing->GetOutput());
+	logoRepresentation->SetPosition(0, 0);
+	logoRepresentation->SetPosition2(.4, .4);
+	logoRepresentation->GetImageProperty()->SetOpacity(0.5);
+
+	logoWidget = vtkSmartPointer<vtkLogoWidget>::New();
+	logoWidget->SetInteractor(this->ui->vtkRenderer->GetRenderWindow()->GetInteractor());
+	logoWidget->SetRepresentation(logoRepresentation);
+	logoWidget->On();
+	
+	this->ui->vtkRenderer->GetRenderWindow()->Render();
+	this->ui->vtkRenderer->show();
+
+
+	//this->ui->vtkRenderer->GetRenderWindow()->GetInteractor()->Start();
+		//vtkWidget->ProcessEventsOn();
+
+
 }

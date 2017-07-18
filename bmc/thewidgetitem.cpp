@@ -67,7 +67,7 @@ TheWidgetItem::TheWidgetItem(QString file, QVTKWidget *widgetvtk, vtkRenderer* r
 
 	renderer = renderer_;
 	renderer->AddActor(actor);
-	renderer->SetBackground(0.3, 0.3, 0.3);
+	renderer->SetBackground(39 / 255, 40 / 255, 34 / 255);
 
 	widgetVTK->GetRenderWindow()->AddRenderer(renderer);
 	widgetVTK->show();

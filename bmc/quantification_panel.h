@@ -32,6 +32,4 @@ public:
 	~q_panel() {}	
 	void on_btn_3D_selection_clicked();
 
-	on_btn_3D_selection_clicked();
-
 };
